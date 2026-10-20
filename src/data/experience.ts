@@ -33,15 +33,8 @@ export const experience: Employer[] = [
     company: "D.W. Clark",
     location: "Taunton, Massachusetts",
     description:
-      "Work at D.W. Clark progressed from a mechanical engineering co-op into production and operations engineering, and then into full-time industrial engineering — spanning CNC equipment, manufacturing operations, automation, facilities and equipment reliability.",
+      "Work at D.W. Clark progressed from a mechanical engineering co-op supporting the foundry into a production and operations co-op — spanning casting, CNC equipment, heat-treat systems, manufacturing operations and equipment reliability.",
     roles: [
-      {
-        id: "industrial",
-        title: "Industrial Engineering",
-        type: "Full-time",
-        dates: undefined,
-        summary: "Full-time industrial engineering work following the co-op rotations.",
-      },
       {
         id: "production-ops",
         title: "Production and Operations Co-op",
@@ -53,6 +46,8 @@ export const experience: Employer[] = [
           "Designed and implemented machining methods, workholding and ring-segmenting processes to improve efficiency and repeatability",
           "Developed and deployed preventive maintenance procedures and MES workflows, enabling digital tracking and improved equipment uptime",
           "Designed improved in-process material staging and inventory systems to reduce downtime and support daily production",
+          "Upgraded and integrated heat-treat furnace systems, implementing new VFD controls and mechanical reinforcements",
+          "Designed and optimized machining fixtures and shop layouts to improve process flow",
         ],
       },
       {
@@ -75,7 +70,8 @@ export const experience: Employer[] = [
       { title: "CNC Machining", detail: "Operating CNC equipment to drawings and GD&T; machining methods and workholding." },
       { title: "Process Improvement", detail: "Ring-segmenting processes, material staging and inventory systems to reduce downtime." },
       { title: "Preventive Maintenance", detail: "PM procedures and Odoo/MES workflows for digital tracking and uptime." },
-      { title: "Industrial Automation", detail: "Automated grinding, material handling and scheduling initiatives." },
+      { title: "Heat-Treat Systems", detail: "Furnace upgrades and integration with new VFD controls and mechanical reinforcements." },
+      { title: "Fixtures & Shop Layout", detail: "Machining fixtures and shop layouts designed for process flow." },
       { title: "Vendor Coordination", detail: "Mechanical repairs, controller updates and external service providers." },
     ],
     relatedProjects: ["cnc-installation-commissioning", "manufacturing-automation", "reliability-maintenance-systems"],

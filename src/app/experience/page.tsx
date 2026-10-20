@@ -24,7 +24,7 @@ export default function ExperiencePage() {
         crumbs={[{ href: "/experience", label: "Experience" }]}
         eyebrow={<span className="text-volt-300">Professional engineering experience</span>}
         title="Experience"
-        intro="Industrial engineering experience built on the production floor — progressing from co-op to production and operations engineering to full-time industrial engineering."
+        intro="Industrial engineering experience built on the production floor — progressing from a mechanical engineering co-op in the foundry to a production and operations co-op on CNC, heat-treat and maintenance systems."
       />
 
       {experience.map((emp) => {

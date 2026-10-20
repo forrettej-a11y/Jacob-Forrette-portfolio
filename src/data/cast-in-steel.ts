@@ -203,7 +203,11 @@ export const castInSteelYears: Project[] = [
     highlights: ["Team leader", "Modified 17-4 PH stainless", "MAGMA gating design", "Iron Mountain Forge testing"],
     contribution: {
       role: "Team Leader",
-      personal: ["Led the five-member Stars and Steel team as team leader"],
+      personal: [
+        "Led a team of five to produce a replica of the Bailey Silver & Ivory Hilted Cuttoe — design, casting, finishing and assembly",
+        "Managed deadlines for the sword, the 30-page technical report and the 5-minute project video",
+        "Worked with D.W. Clark engineers and machinists to refine the design for casting and machining",
+      ],
       team: [
         "Historical research on Washington's swords",
         "CAD model and design for casting with D.W. Clark engineers",
@@ -221,7 +225,7 @@ export const castInSteelYears: Project[] = [
         { name: "Jake Elias" },
         { name: "Luis Leins" },
       ],
-      note: `Faculty advisor: ${ADVISOR}. A detailed breakdown of my individual work will be added.`,
+      note: `Faculty advisor: ${ADVISOR}.`,
     },
     sections: [
       {

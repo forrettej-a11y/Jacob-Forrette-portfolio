@@ -312,6 +312,7 @@ export const projects: Project[] = [
         "Troubleshot and improved mechanical systems, electrical components and CNC controller logic across large CNC machines, material-handling manipulators and heat-treat work centers",
         "Designed and implemented machining methods, workholding and ring-segmenting processes to improve efficiency and repeatability",
         "Designed improved in-process material staging and inventory systems to reduce downtime",
+        "Designed and optimized machining fixtures and shop layouts to improve process flow",
       ],
       note: "Installations also involve riggers, electricians, OEM service and plant staff.",
     },
@@ -400,7 +401,7 @@ export const projects: Project[] = [
     tagline:
       "Automation initiatives in a high-mix foundry and machine shop — automated grinding, heat-treat material handling, machine integration and monitoring, and automated job scheduling.",
     summary:
-      "Automation work at D.W. Clark spanning automated grinding and material removal, material handling for heat-treatment equipment, CNC and machine-control integration, machine monitoring and automated job scheduling — each labeled by status, from completed work to concepts under study.",
+      "Automation work at D.W. Clark spanning a completed heat-treat furnace VFD controls upgrade, automated grinding and material removal, material handling for heat-treatment equipment, CNC and machine-control integration, machine monitoring and automated job scheduling — each labeled by status, from completed work to concepts under study.",
     categories: ["Industrial Automation", "Robotics", "Manufacturing Systems"],
     disciplines: ["Industrial Automation", "Robotics", "Manufacturing"],
     status: "in-progress",
@@ -412,7 +413,7 @@ export const projects: Project[] = [
       { label: "Environment", value: "High-mix, low-volume foundry & machine shop" },
       { label: "Status key", value: "Each initiative is labeled individually below" },
     ],
-    highlights: ["Automated grinding", "Heat-treat material handling", "Machine monitoring", "Automated scheduling"],
+    highlights: ["Heat-treat VFD controls", "Automated grinding", "Heat-treat material handling", "Automated scheduling"],
     contribution: {
       personal: [],
       note: "My specific role on each initiative will be listed within its case study.",
@@ -428,6 +429,19 @@ export const projects: Project[] = [
       },
     ],
     caseStudies: [
+      {
+        id: "heat-treat-vfd",
+        title: "Heat-treat furnace upgrade & controls integration",
+        status: "completed",
+        summary: "Upgraded and integrated existing heat-treat furnace systems, implementing new variable-frequency-drive (VFD) controls and mechanical reinforcements.",
+        bullets: ["VFD controls", "Mechanical reinforcement", "Systems integration"],
+        details: [
+          { label: "My role", value: "Production & Operations Co-op — upgrade and integration" },
+          { label: "Timeframe", value: "Aug – Dec 2025" },
+          { label: "Control-system description", note: "Details to be added (non-confidential)" },
+        ],
+        media: [{ kind: "photo", caption: "Furnace controls upgrade", src: `${AUTO}/heat-treat-vfd.jpg` }],
+      },
       {
         id: "automated-grinding",
         title: "Automated grinding & material removal",
