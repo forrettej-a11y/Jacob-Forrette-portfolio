@@ -30,12 +30,13 @@ export default function ResearchPage() {
             <span>Graduate Research · Industrial Automation · Manufacturing Engineering</span>
           </>
         }
-        title={research.title}
+        title={research.shortTitle}
         intro={research.question}
         aside={
           <SpecTable
             title="Thesis data"
             specs={[
+              { label: "Working title", value: research.title },
               { label: "Degree", value: research.degree },
               { label: "Institution", value: research.institution },
               { label: "Completion", value: research.expected },
@@ -92,16 +93,51 @@ export default function ResearchPage() {
         code="03"
         eyebrow="Proposed methodology"
         title="Research workflow."
-        intro="An eight-step approach from scoping through recommendations. Comparisons between manual, semi-automated and automated operations depend on the data available for each candidate process."
+        intro="A two-semester plan from scoping through validation, using real production data from D.W. Clark and Siemens / Altair simulation to compare baseline and automated scenarios."
       >
         <Reveal>
           <DiagramView diagram={{ title: "Research workflow", type: "flow", nodes: research.methodology }} />
         </Reveal>
       </Section>
 
-      {/* Technical diagram: comparison framework */}
+      {/* Case studies */}
       <Section
         code="04"
+        eyebrow="Case studies"
+        title="Three automation opportunities."
+        intro="The study evaluates flexible automation in three real HMLV operations, each compared against the manual or semi-automated process it would replace."
+        className="border-t hairline"
+      >
+        <ol className="grid gap-5 lg:grid-cols-3">
+          {research.caseStudies.map((c, i) => (
+            <Reveal as="li" key={c.title} delay={i * 0.06} className="panel flex flex-col p-6">
+              <span className="font-mono text-xs tracking-[0.16em] text-volt-400">CASE {pad2(i + 1)}</span>
+              <h3 className="mt-3 text-xl font-semibold">{c.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-steel-400">{c.context}</p>
+              <p className="eyebrow mb-2 mt-5 text-[0.62rem]">Compared on</p>
+              <ul className="flex flex-wrap gap-1.5">
+                {c.metrics.map((m) => (
+                  <li key={m} className="rounded-[3px] border hairline px-2 py-1 text-xs text-steel-300">
+                    {m}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          ))}
+        </ol>
+        <Reveal className="mt-8 flex flex-wrap items-center gap-2">
+          <span className="eyebrow mr-2">Data & tools</span>
+          {research.tools.map((t) => (
+            <span key={t} className="rounded-[3px] border border-volt-400/25 bg-volt-500/[0.06] px-3 py-1.5 text-sm text-steel-200">
+              {t}
+            </span>
+          ))}
+        </Reveal>
+      </Section>
+
+      {/* Technical diagram: comparison framework */}
+      <Section
+        code="05"
         eyebrow="Analysis framework"
         title="Comparing operating modes."
         intro="The core comparison the study is designed around. Every cell remains pending until data has been collected and validated."
@@ -142,7 +178,7 @@ export default function ResearchPage() {
 
       {/* Metrics */}
       <Section
-        code="05"
+        code="06"
         eyebrow="Manufacturing metrics"
         title="How performance will be measured."
         intro="Standard manufacturing measures the data collection is structured around. Definitions only — no values are reported here."
@@ -160,7 +196,7 @@ export default function ResearchPage() {
       </Section>
 
       {/* Milestones */}
-      <Section code="06" eyebrow="Research milestones" title="Where the work stands.">
+      <Section code="07" eyebrow="Research milestones" title="Where the work stands.">
         <Reveal>
           <Timeline entries={researchMilestones} label="Thesis research milestones" />
         </Reveal>
@@ -168,7 +204,7 @@ export default function ResearchPage() {
 
       {/* Future results */}
       <Section
-        code="07"
+        code="08"
         eyebrow="Results"
         title="Findings — pending validation."
         intro="This section will be populated only once results have been collected, analyzed and validated. No findings are implied by the questions below."
@@ -192,8 +228,25 @@ export default function ResearchPage() {
         </ul>
       </Section>
 
+      {/* References */}
+      <Section code="09" eyebrow="Key references" title="Foundations from the literature.">
+        <ol className="space-y-3">
+          {research.references.map((r, i) => (
+            <li key={r.url} className="flex gap-4 text-sm leading-6 text-steel-300">
+              <span className="font-mono text-xs text-volt-400">[{i + 1}]</span>
+              <span>
+                {r.text}{" "}
+                <a href={r.url} target="_blank" rel="noopener noreferrer" className="text-volt-300 underline-offset-4 hover:underline">
+                  DOI
+                </a>
+              </span>
+            </li>
+          ))}
+        </ol>
+      </Section>
+
       {/* Documents */}
-      <Section code="08" eyebrow="Publications & documents" title="Thesis and papers." className="border-t hairline bg-ink-950/40">
+      <Section code="10" eyebrow="Publications & documents" title="Thesis and papers." className="border-t hairline bg-ink-950/40">
         <DocumentList documents={docs} />
       </Section>
     </>

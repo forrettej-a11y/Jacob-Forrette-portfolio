@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { biography, education, interests, site } from "@/data/site";
+import { activities, biography, education, interests, site } from "@/data/site";
 import { fileExists, resolveMedia } from "@/lib/assets";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
@@ -47,7 +47,7 @@ export default function AboutPage() {
             <dl className="mt-6 divide-y divide-[var(--line)] border-y hairline text-sm">
               {[
                 ["Discipline", "Electromechanical / Mechanical"],
-                ["Industry", "DW Clark — Taunton, MA"],
+                ["Industry", "D.W. Clark — Taunton, MA"],
                 ["University", "Wentworth Institute of Technology"],
               ].map(([k, v]) => (
                 <div key={k} className="flex justify-between gap-4 py-3">
@@ -109,7 +109,18 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section code="03" eyebrow="Engineering interests" title="What I want to keep working on." className="border-t hairline">
+      <Section code="03" eyebrow="Involvement" title="Beyond coursework." className="border-t hairline bg-ink-950/40">
+        <ul className="grid gap-px overflow-hidden rounded-[4px] border hairline bg-[var(--line)] md:grid-cols-3">
+          {activities.map((a) => (
+            <li key={a.org} className="bg-ink-900 p-6">
+              <p className="font-semibold text-steel-100">{a.org}</p>
+              <p className="mt-1 text-sm text-steel-400">{a.role}</p>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section code="04" eyebrow="Engineering interests" title="What I want to keep working on." className="border-t hairline">
         <ul className="flex flex-wrap gap-2">
           {interests.map((it) => (
             <li key={it.code} className="flex items-center gap-3 rounded-[3px] border hairline px-4 py-2.5">

@@ -14,7 +14,7 @@ import { CareerTimeline } from "@/components/home/CareerTimeline";
 export const metadata: Metadata = {
   title: "Professional Experience",
   description:
-    "Professional engineering experience at DW Clark in Taunton, Massachusetts — CNC equipment, manufacturing operations, industrial automation, maintenance and process improvement.",
+    "Professional engineering experience at D.W. Clark in Taunton, Massachusetts — CNC equipment, manufacturing operations, industrial automation, maintenance and process improvement.",
 };
 
 export default function ExperiencePage() {

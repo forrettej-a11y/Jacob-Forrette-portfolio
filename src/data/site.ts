@@ -11,7 +11,7 @@ export const site = {
   subtitle: "Mechanical Engineering Graduate Student",
   headline: "Engineering that holds up on the shop floor.",
   intro:
-    "Electromechanical engineer working across CNC equipment, industrial automation, metal casting and robotics — combining hands-on industrial experience at DW Clark with graduate research at Wentworth Institute of Technology.",
+    "Electromechanical engineer working across CNC equipment, industrial automation, metal casting and robotics — combining hands-on industrial experience at D.W. Clark with graduate research at Wentworth Institute of Technology.",
 
   /** Optional hero photograph. Drop a wide image at /public/images/hero.jpg and it appears automatically. */
   heroImage: "/images/hero.jpg",
@@ -75,9 +75,17 @@ export const interests = [
 ];
 
 export const biography = [
-  "I'm an electromechanical engineer who works where design meets the shop floor. At DW Clark in Taunton, Massachusetts, I've grown from a mechanical engineering co-op into production, operations and industrial engineering work — installing and commissioning large CNC vertical turning lathes, diagnosing mechanical, electrical and control faults, supporting automation initiatives, and building the preventive-maintenance systems that keep equipment running.",
-  "Alongside that work, I completed my B.S. in Electromechanical Engineering at Wentworth Institute of Technology in August 2026 and am continuing into an M.S. in Mechanical Engineering. My thesis research looks at where flexible automation genuinely pays off in high-mix, low-volume manufacturing — and where it doesn't. Four years in the SFSA Cast in Steel competition, including leading the team that produced a CA6NM stainless horseman's axe, have given me practical grounding in casting design, metallurgy and mechanical testing.",
-  "I'm most useful on problems that cross disciplines: a machine that won't come up cleanly, a part that's difficult to cast, a process that needs automation without giving up flexibility. I like to understand the system end to end, verify assumptions on real hardware, and document what I learn so the next person doesn't start from zero.",
+  "I'm an electromechanical engineer who works where design meets the shop floor. At D.W. Clark in Taunton, Massachusetts, I started as a mechanical engineering co-op supporting the full casting lifecycle, moved into production and operations — leading startup, commissioning and overhaul of multi-axis CNC vertical lathes and building preventive-maintenance workflows in the MES — and continued into full-time industrial engineering.",
+  "I completed my B.S. in Electromechanical Engineering at Wentworth Institute of Technology in August 2026 and am continuing into an M.S. in Mechanical Engineering. My thesis uses real production data and simulation to find where flexible automation actually pays off in high-mix, low-volume manufacturing. For senior design I led the mechanical design and systems integration of a remotely operated confined-space inspection rover, and across four years of the SFSA Cast in Steel competition I've gone from team member to leading three teams — a George Washington sword, a CA6NM stainless horseman's axe, and the 2027 flanged mace.",
+  "I'm most useful on problems that cross disciplines: a machine that won't come up cleanly, a part that's hard to cast, a process that needs automation without giving up flexibility. I like to understand the system end to end, verify assumptions on real hardware, and document what I learn so the next person doesn't start from zero.",
+];
+
+export const awards = ["Dean's List, 2022–2026", "Honors Program"];
+
+export const activities = [
+  { org: "SFSA Cast in Steel", role: "Team Leader (2025–2027) · Member since Nov 2023" },
+  { org: "American Foundry Society", role: "Member since Nov 2023" },
+  { org: "Boston College Marching Band & Pep Band", role: "Tuba · Section Leader" },
 ];
 
 export const navigation = [

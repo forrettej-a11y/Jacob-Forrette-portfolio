@@ -45,6 +45,8 @@ export interface MediaItem {
   alt?: string;
   /** Video poster image (videos only). */
   poster?: string;
+  /** "contain" shows the whole image (use for very tall/wide photos). Default "cover". */
+  fit?: "cover" | "contain";
 }
 
 /** A MediaItem after the build has checked whether its file exists. */

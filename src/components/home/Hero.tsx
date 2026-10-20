@@ -13,7 +13,7 @@ export function Hero() {
   const facts = [
     { k: "B.S.", v: "Electromechanical Engineering", s: education[1].date },
     { k: "M.S.", v: "Mechanical Engineering", s: education[0].date },
-    { k: "Industry", v: "DW Clark", s: "Taunton, MA" },
+    { k: "Industry", v: "D.W. Clark", s: "Taunton, MA" },
     { k: "Cast in Steel", v: "Four competition years", s: "SFSA" },
   ];
 

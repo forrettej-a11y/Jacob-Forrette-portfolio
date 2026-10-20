@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { education, site } from "@/data/site";
+import { activities, awards, education, site } from "@/data/site";
 import { experience } from "@/data/experience";
 import { featuredProjects, projectHref } from "@/data/projects";
-import { skillCategories } from "@/data/skills";
+import { certifications, skillCategories } from "@/data/skills";
 import { fileExists } from "@/lib/assets";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { ButtonLink, DisabledButton } from "@/components/ui/Button";
@@ -143,6 +143,30 @@ export default function ResumePage() {
                 </div>
               ))}
             </dl>
+          </section>
+          <section className="mt-10 grid gap-8 sm:grid-cols-2">
+            <div>
+              <Heading>Certifications & awards</Heading>
+              <ul className="space-y-1.5 text-sm text-steel-300">
+                {[...certifications, ...awards].map((c) => (
+                  <li key={c} className="flex gap-2">
+                    <span className="mt-2 h-1 w-1 shrink-0 rotate-45 bg-volt-400" aria-hidden />
+                    {c}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <Heading>Activities</Heading>
+              <ul className="space-y-2 text-sm">
+                {activities.map((a) => (
+                  <li key={a.org}>
+                    <span className="text-steel-100">{a.org}</span>
+                    <span className="block text-steel-500">{a.role}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </section>
         </article>
       </div>

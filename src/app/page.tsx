@@ -79,7 +79,7 @@ export default function HomePage() {
         code="02"
         eyebrow="Cast in Steel · SFSA"
         title="Four years in the foundry."
-        intro="Each competition year is its own design-to-test project. The timeline traces the progression — through team leadership in 2026 to fully printed sand molds in 2027."
+        intro="Each competition year is its own design-to-test project — a Halligan bar, a George Washington sword, a horseman's axe and a flanged mace. The timeline traces the progression from team member in 2024 to team leader from 2025 on."
         className="border-t hairline bg-ink-950/40"
         action={
           <ButtonLink href="/cast-in-steel" variant="secondary">
@@ -121,7 +121,7 @@ export default function HomePage() {
                 <p className="eyebrow">Graduate research</p>
                 <StatusBadge status="research" />
               </div>
-              <h3 className="mt-3 text-2xl font-semibold leading-tight">{research.title}</h3>
+              <h3 className="mt-3 text-2xl font-semibold leading-tight">{research.shortTitle}</h3>
               <p className="text-sm text-steel-500">{research.degree}</p>
               <blockquote className="mt-6 border-l-2 border-volt-500 pl-4 text-lg leading-snug text-steel-200">{research.question}</blockquote>
               <div className="mt-6 flex flex-wrap gap-1.5">

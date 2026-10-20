@@ -52,7 +52,7 @@ export default function CastInSteelPage() {
               { label: "Institution", value: o.institution },
               { label: "Foundry partner", value: o.foundryPartner },
               { label: "Competition years", value: "Four" },
-              { label: "Leadership", value: "Team Lead — 2026" },
+              { label: "Leadership", value: "Team Leader — 2025, 2026, 2027" },
             ]}
           />
         }
@@ -77,11 +77,11 @@ export default function CastInSteelPage() {
                 >
                   <div className="relative">
                     {cover && <MediaFrame media={cover} aspect="aspect-[16/9]" className="rounded-none border-0 border-b" />}
-                    <span className="absolute left-4 top-4 font-mono text-xs tracking-[0.16em] text-volt-300">YEAR {pad2(i + 1)}</span>
                     <StatusBadge status={y.status} className="absolute right-3 top-3" />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <p className="font-mono text-4xl font-semibold tracking-tight text-steel-50">{yearSpec ?? "—"}</p>
+                    <p className="font-mono text-xs tracking-[0.16em] text-volt-300">YEAR {pad2(i + 1)} OF 4</p>
+                    <p className="mt-1 font-mono text-4xl font-semibold tracking-tight text-steel-50">{yearSpec ?? "—"}</p>
                     <h3 className="mt-2 text-xl font-semibold">{y.shortTitle}</h3>
                     <p className="mt-3 line-clamp-3 leading-relaxed text-steel-400">{y.summary}</p>
                     <span className="mt-auto flex items-center gap-2 pt-6 text-sm font-medium text-volt-300">

@@ -28,7 +28,7 @@ export function MediaFrame({
 
   if (media.available && media.src) {
     return (
-      <figure className={cn("group/media relative overflow-hidden rounded-[4px] border hairline bg-ink-850", aspect, className)}>
+      <figure className={cn("group/media relative overflow-hidden rounded-[4px] border hairline", media.fit === "contain" ? "bg-ink-950" : "bg-ink-850", aspect, className)}>
         {media.kind === "video" ? (
           <>
             {media.poster ? (
@@ -49,7 +49,10 @@ export function MediaFrame({
             fill
             sizes={sizes}
             priority={priority}
-            className="object-cover transition-transform duration-700 ease-[var(--ease-drafting)] group-hover/media:scale-[1.03]"
+            className={cn(
+              "transition-transform duration-700 ease-[var(--ease-drafting)] group-hover/media:scale-[1.03]",
+              media.fit === "contain" ? "object-contain p-3" : "object-cover",
+            )}
           />
         )}
         {showCaption && (
