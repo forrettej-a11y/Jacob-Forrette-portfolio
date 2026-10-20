@@ -24,12 +24,12 @@ export default function OpengraphImage() {
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16, color: "#82c0ff", fontSize: 24, letterSpacing: 4 }}>
           <div style={{ width: 56, height: 2, background: "#4ea4ff" }} />
-          ENGINEERING PORTFOLIO
+          <span>ENGINEERING PORTFOLIO</span>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 96, fontWeight: 700, letterSpacing: -3, lineHeight: 1 }}>{site.name}</div>
-          <div style={{ marginTop: 24, fontSize: 36, color: "#a9b1bb" }}>
-            {site.title} · {site.subtitle}
+          <div style={{ display: "flex", fontSize: 96, fontWeight: 700, letterSpacing: -3, lineHeight: 1 }}>{site.name}</div>
+          <div style={{ display: "flex", marginTop: 24, fontSize: 36, color: "#a9b1bb" }}>
+            {`${site.title} · ${site.subtitle}`}
           </div>
         </div>
         <div style={{ display: "flex", gap: 32, fontSize: 22, color: "#87909b", letterSpacing: 2 }}>
