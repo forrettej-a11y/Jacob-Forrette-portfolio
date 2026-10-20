@@ -1,0 +1,272 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   DESIGN SYSTEM — "Drafting Room"
+   Dark charcoal base · steel neutrals · electric-blue accent ·
+   blueprint grid + CAD title-block details · Geist Sans / Geist Mono
+   ========================================================================== */
+
+@theme {
+  /* Charcoal surfaces (darkest → raised) */
+  --color-ink-950: #08090b;
+  --color-ink-900: #0d0f12;
+  --color-ink-850: #111419;
+  --color-ink-800: #161a20;
+  --color-ink-700: #1e232b;
+  --color-ink-600: #2a3039;
+  --color-ink-500: #3a414c;
+
+  /* Steel neutrals (text + metallic) */
+  --color-steel-50: #f4f6f8;
+  --color-steel-100: #e7eaee;
+  --color-steel-200: #cbd1d8;
+  --color-steel-300: #a9b1bb;
+  --color-steel-400: #87909b;
+  --color-steel-500: #67707b;
+  --color-steel-600: #4c545e;
+
+  /* Electric blue accent */
+  --color-volt-200: #b9dcff;
+  --color-volt-300: #82c0ff;
+  --color-volt-400: #4ea4ff;
+  --color-volt-500: #1f87ff;
+  --color-volt-600: #0b69e0;
+  --color-volt-700: #0a4fa6;
+
+  /* Status colors */
+  --color-status-completed: #7fd8b1;
+  --color-status-progress: #4ea4ff;
+  --color-status-research: #b4a2ff;
+  --color-status-planned: #87909b;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --ease-drafting: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --line: rgb(148 163 184 / 0.12);
+    --line-strong: rgb(148 163 184 / 0.22);
+    --grid: rgb(78 164 255 / 0.06);
+    --grid-major: rgb(78 164 255 / 0.1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background: var(--color-ink-900);
+    color: var(--color-steel-100);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgb(31 135 255 / 0.35);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-volt-400);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--color-steel-50);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  /* Page container */
+  .container-x {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 640px) {
+    .container-x {
+      padding-inline: 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container-x {
+      padding-inline: 2rem;
+    }
+  }
+
+  /* Small mono label used for section codes, metadata, spec labels */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-steel-400);
+  }
+
+  /* Blueprint grid (minor + major lines) */
+  .blueprint-grid {
+    background-image:
+      linear-gradient(var(--grid-major) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-major) 1px, transparent 1px),
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size:
+      120px 120px,
+      120px 120px,
+      24px 24px,
+      24px 24px;
+    background-position: -1px -1px;
+  }
+
+  .fade-mask-b {
+    mask-image: linear-gradient(to bottom, black 40%, transparent);
+  }
+  .fade-mask-radial {
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+
+  /* Brushed-steel headline text */
+  .steel-text {
+    background: linear-gradient(180deg, #ffffff 0%, #dfe4ea 45%, #98a2ae 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Raised panel with hairline border */
+  .panel {
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.025), rgb(255 255 255 / 0.01));
+    border: 1px solid var(--line);
+    border-radius: 0.375rem;
+  }
+
+  .hairline {
+    border-color: var(--line);
+  }
+
+  /* Diagonal section hatching used for placeholder media */
+  .hatch {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      rgb(148 163 184 / 0.06) 0 1px,
+      transparent 1px 10px
+    );
+  }
+
+  /* CAD-style corner registration marks */
+  .corner-marks {
+    position: relative;
+  }
+  .corner-marks::before,
+  .corner-marks::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    pointer-events: none;
+    border-color: var(--color-volt-400);
+    opacity: 0.7;
+  }
+  .corner-marks::before {
+    top: -1px;
+    left: -1px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+  }
+  .corner-marks::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+  }
+
+  /* Prose for long-form project text */
+  .prose-eng {
+    color: var(--color-steel-200);
+    line-height: 1.75;
+    font-size: 1.0125rem;
+  }
+  .prose-eng p + p {
+    margin-top: 1rem;
+  }
+  .prose-eng strong {
+    color: var(--color-steel-50);
+    font-weight: 600;
+  }
+
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.35s var(--ease-drafting);
+  }
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Pulsing dot for "In Progress" status */
+@keyframes status-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(78 164 255 / 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgb(78 164 255 / 0);
+  }
+}
+.status-pulse {
+  animation: status-pulse 2.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .status-pulse {
+    animation: none;
+  }
+}
+
+@media print {
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+    color: #111;
+  }
+}
