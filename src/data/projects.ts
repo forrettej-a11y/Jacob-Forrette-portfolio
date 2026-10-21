@@ -52,7 +52,7 @@ export const projects: Project[] = [
     institution: "Wentworth Institute of Technology",
     organization: "ELMC 5000 — Senior Design",
     period: "Jan 2025 – Aug 2026",
-    cover: { kind: "cad", caption: "ASIS rover — final CAD assembly", src: `${SD}/cad-assembly.jpg` },
+    cover: { kind: "final", caption: "ASIS rover prototype — front view with bash bar and warning LEDs", src: `${SD}/prototype-front.jpg`, fit: "contain" },
     specs: [
       { label: "Project type", value: "Senior design capstone (ELMC 5000)" },
       { label: "My role", value: "Mechanical & Systems Integration Lead" },
@@ -197,6 +197,17 @@ export const projects: Project[] = [
         media: [{ kind: "schematic", caption: "Electrical schematic (team)", src: `${SD}/schematic.jpg` }],
       },
       {
+        id: "prototype",
+        title: "Built prototype",
+        body: [
+          "The finished rover: sheet-steel chassis on twin tracks, front bash bar, external warning LEDs and filtered fan openings. Inside, the two M18 batteries, voltage converters, Arduino GIGA controller and wiring harness are packaged on the insulated platform with the cooling fans along the side walls.",
+        ],
+        media: [
+          { kind: "final", caption: "Front view — bash bar, LEDs and tracks", src: `${SD}/prototype-front.jpg`, fit: "contain" },
+          { kind: "fabrication", caption: "Internal layout — batteries, converters, controller and harness", src: `${SD}/prototype-internal.jpg`, fit: "contain" },
+        ],
+      },
+      {
         id: "testing",
         title: "Testing — track repeatability experiment",
         body: [
@@ -248,7 +259,8 @@ export const projects: Project[] = [
       { kind: "diagram", caption: "Thermal simulation", src: `${SD}/thermal-2.jpg` },
       { kind: "diagram", caption: "FEA — stress", src: `${SD}/fea-stress.jpg` },
       { kind: "schematic", caption: "Electrical schematic", src: `${SD}/schematic.jpg` },
-      { kind: "final", caption: "Completed prototype", src: `${SD}/prototype-01.jpg` },
+      { kind: "final", caption: "Completed prototype — front", src: `${SD}/prototype-front.jpg`, fit: "contain" },
+      { kind: "fabrication", caption: "Integrated electronics, dual M18 batteries and cooling", src: `${SD}/prototype-internal.jpg`, fit: "contain" },
       { kind: "video", caption: "Drive test", src: "/videos/senior-design-drive-test.mp4" },
     ],
     documents: [
