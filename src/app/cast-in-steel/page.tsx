@@ -58,6 +58,12 @@ export default function CastInSteelPage() {
         }
       />
 
+      <div className="container-x pt-10">
+        <Reveal>
+          <MediaFrame media={resolveMedia({ kind: "final", caption: "Finished products — 2024 Halligan bar, 2025 Washington sword, 2026 horseman's axe", src: "/images/cast-in-steel/collection-cover.jpg" })} aspect="aspect-[16/10]" priority sizes="100vw" showCaption />
+        </Reveal>
+      </div>
+
       <Section code="01" eyebrow="Interactive timeline" title="Engineering development, year by year." intro="Select a year to see the project and open its full engineering write-up.">
         <Reveal>
           <Timeline entries={castInSteelTimeline} label="Cast in Steel competition years" variant="large" />

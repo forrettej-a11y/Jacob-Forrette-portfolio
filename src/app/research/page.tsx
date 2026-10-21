@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { research, researchDocuments, researchMilestones } from "@/data/research";
-import { resolveDocuments } from "@/lib/assets";
+import { resolveDocuments, resolveMedia } from "@/lib/assets";
 import { pad2 } from "@/lib/utils";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { MediaFrame } from "@/components/media/MediaFrame";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { SpecTable } from "@/components/ui/SpecTable";
@@ -46,6 +47,12 @@ export default function ResearchPage() {
           />
         }
       />
+
+      <div className="container-x pt-10">
+        <Reveal>
+          <MediaFrame media={resolveMedia({ kind: "diagram", caption: "Illustration — HMLV flexible-automation research framework", src: "/images/research/cover.jpg" })} aspect="aspect-[16/10]" priority sizes="100vw" showCaption />
+        </Reveal>
+      </div>
 
       {/* Abstract + problem */}
       <Section code="01" eyebrow="Abstract" title="Why automation is harder when every job is different.">
