@@ -63,7 +63,7 @@ export const castInSteelYears: Project[] = [
       { label: "Competition year", value: "2024" },
       { label: "Product", value: "Halligan bar (forcible-entry tool)" },
       { label: "Team", value: "Big Bar Club" },
-      { label: "My role", value: "Team member" },
+      { label: "My role", value: "Team member — research, initial design & testing" },
       { label: "Material", value: "4140 steel" },
       { label: "Process", value: "Sand casting" },
       { label: "Final weight", value: "10.2 lb", note: "Limit 13.2 lb" },
@@ -73,8 +73,12 @@ export const castInSteelYears: Project[] = [
     ],
     highlights: ["4140 steel sand casting", "Firefighter-driven redesign", "SolidWorks FEA comparison", "Door-jig field testing"],
     contribution: {
-      role: "Team Member",
-      personal: [],
+      role: "Team Member — Research, Initial Design & Testing",
+      personal: [
+        "Conducted the initial research into the Halligan bar's history, use and common failure points",
+        "Developed the initial design concept for the redesigned bar",
+        "Carried out testing of the finished bar, including forcible-entry trials with the Boston Fire Department",
+      ],
       team: [
         "Firefighter interviews and measurement of an in-service bar",
         "CAD redesign in SolidWorks",
@@ -92,7 +96,7 @@ export const castInSteelYears: Project[] = [
         { name: "Brendon Spencer" },
         { name: "Nick Khlystov" },
       ],
-      note: `Faculty advisor: ${ADVISOR}. My specific responsibilities on this team will be added.`,
+      note: `Faculty advisor: ${ADVISOR}. Team leader: Joshua Hofer.`,
     },
     sections: [
       {
